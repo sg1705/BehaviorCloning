@@ -1,0 +1,14 @@
+name: BehaviorCloningProject
+dependencies:
+- pip >= 9
+- jupyter
+- matplotlib
+- numpy
+- scipy
+- scikit-learn
+- pandas
+- pillow
+- keras
+- menpo::opencv3
+- pip:
+  - tensorflow >= 0.12.0rc1
