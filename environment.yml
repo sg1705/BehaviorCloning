@@ -12,3 +12,7 @@ dependencies:
 - menpo::opencv3
 - pip:
   - tensorflow >= 0.12.0rc1
+  - python-socketio
+  - eventlet
+  - flask
+  - tqdm
