@@ -4,3 +4,5 @@ data/
 *.p
 model.json
 *.pickle
+IMG
+*.csv

@@ -37,15 +37,20 @@ def telemetry(sid, data):
     imgString = data["image"]
     image = Image.open(BytesIO(base64.b64decode(imgString)))
     image_array = np.asarray(image)
-    transformed_image_array = image_array[None, :, :, :]
+    #crop
+    image_array = image_array[65:135:4, 0:-1:4, 0]
+    #normalize
+    image_array = image_array / 255 - 0.5
+    transformed_image_array = image_array.reshape((1,image_array.shape[0],image_array.shape[1],1))
+    # transformed_image_array = image_array[None, :, :, :]
     # This model currently assumes that the features of the model are just the images. Feel free to change this.
-    #steering_angle = float(model.predict(transformed_image_array, batch_size=1))
-    steering_angle = 0.0
+    steering_angle = float(model.predict(transformed_image_array, batch_size=1))
+    # steering_angle = 0.0
     # The driving model currently just outputs a constant throttle. Feel free to edit this.
     throttle = 0.2
     print(steering_angle, throttle)
-    #send_control(steering_angle, throttle)
-    send_control(0.5, throttle)
+    send_control(steering_angle, throttle)
+    # send_control(0.5, throttle)
 
 
 @sio.on('connect')
@@ -73,7 +78,8 @@ if __name__ == '__main__':
         #   model = model_from_json(json.loads(jfile.read()))\
         #
         # instead.
-        model = model_from_json(jfile.read())
+        # model = model_from_json(jfile.read())
+        model = model_from_json(json.loads(jfile.read()))
 
 
     model.compile("adam", "mse")
