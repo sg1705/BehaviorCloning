@@ -6,3 +6,4 @@ model.json
 *.pickle
 IMG
 *.csv
+*.Z
