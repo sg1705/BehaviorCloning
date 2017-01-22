@@ -33,7 +33,7 @@ PATH_OF_CSV = 'driving_log.csv'
 
 input_shape = (18, 80, 3)
 # 10 degrees = 0.17 radian
-steering_correction = 0.12
+steering_correction = 0.15
 
 ###################################
 ##
@@ -92,7 +92,7 @@ common.test_generator(csvData)
 N_CLASSES = 1 # The output is a single digit: a steering angle
 
 BATCH_SIZE = 64 # The lower the better
-EPOCHS = 5 # The higher the better
+EPOCHS = 10 # The higher the better
 LEARNING_RATE = 0.002
 
 # has to be multiple of batch_size and 3
@@ -102,10 +102,10 @@ test_samples = 1320
 
 
 # number of convolutional filters to use
-nb_filters1 = 16
-nb_filters2 = 8
-nb_filters3 = 4
-nb_filters4 = 2
+nb_filters1 = 64
+nb_filters2 = 32
+nb_filters3 = 16
+nb_filters4 = 8
 
 # size of pooling area for max pooling
 pool_size = (2, 2)
