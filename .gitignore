@@ -7,3 +7,4 @@ model.json
 IMG
 *.csv
 *.Z
+__pycache__

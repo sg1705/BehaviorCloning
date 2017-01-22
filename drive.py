@@ -19,6 +19,7 @@ from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_a
 import tensorflow as tf
 tf.python.control_flow_ops = tf
 
+import common
 
 sio = socketio.Server()
 app = Flask(__name__)
@@ -38,10 +39,11 @@ def telemetry(sid, data):
     image = Image.open(BytesIO(base64.b64decode(imgString)))
     image_array = np.asarray(image)
     #crop
-    image_array = image_array[65:135:4, 0:-1:4, 0]
+    # image_array = image_array[65:135:4, 0:-1:4, :]
+    image_array = common.crop_image(image_array)
     #normalize
     image_array = image_array / 255 - 0.5
-    transformed_image_array = image_array.reshape((1,image_array.shape[0],image_array.shape[1],1))
+    transformed_image_array = image_array.reshape((1,image_array.shape[0],image_array.shape[1],3))
     # transformed_image_array = image_array[None, :, :, :]
     # This model currently assumes that the features of the model are just the images. Feel free to change this.
     steering_angle = float(model.predict(transformed_image_array, batch_size=1))
