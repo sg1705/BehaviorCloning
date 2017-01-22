@@ -96,9 +96,9 @@ EPOCHS = 5 # The higher the better
 LEARNING_RATE = 0.0015
 
 # has to be multiple of batch_size and 3
-no_samples_per_epoch = 660
-validation_samples = 320
-test_samples = 303
+no_samples_per_epoch = 19470
+validation_samples = 1320
+test_samples = 1320
 
 
 # number of convolutional filters to use
