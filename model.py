@@ -93,7 +93,7 @@ N_CLASSES = 1 # The output is a single digit: a steering angle
 
 BATCH_SIZE = 64 # The lower the better
 EPOCHS = 5 # The higher the better
-
+LEARNING_RATE = 0.0015
 
 # has to be multiple of batch_size and 3
 no_samples_per_epoch = 660
@@ -164,7 +164,7 @@ model.summary()
 
 
 model.compile(loss='mean_squared_error',
-              optimizer=Adam(),
+              optimizer=Adam(LEARNING_RATE),
               metrics=['accuracy'])
 
 
