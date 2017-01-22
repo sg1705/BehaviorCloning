@@ -33,7 +33,7 @@ PATH_OF_CSV = 'driving_log.csv'
 
 input_shape = (18, 80, 3)
 # 10 degrees = 0.17 radian
-steering_correction = 0.12
+steering_correction = 0.17
 
 ###################################
 ##
@@ -92,8 +92,8 @@ common.test_generator(csvData)
 N_CLASSES = 1 # The output is a single digit: a steering angle
 
 BATCH_SIZE = 64 # The lower the better
-EPOCHS = 5 # The higher the better
-LEARNING_RATE = 0.002
+EPOCHS = 20 # The higher the better
+LEARNING_RATE = 0.0015
 
 # has to be multiple of batch_size and 3
 no_samples_per_epoch = 19470

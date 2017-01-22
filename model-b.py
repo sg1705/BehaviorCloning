@@ -93,7 +93,7 @@ N_CLASSES = 1 # The output is a single digit: a steering angle
 
 BATCH_SIZE = 64 # The lower the better
 EPOCHS = 10 # The higher the better
-LEARNING_RATE = 0.002
+LEARNING_RATE = 0.015
 
 # has to be multiple of batch_size and 3
 no_samples_per_epoch = 19470
@@ -102,13 +102,13 @@ test_samples = 1320
 
 
 # number of convolutional filters to use
-nb_filters1 = 64
-nb_filters2 = 32
-nb_filters3 = 16
-nb_filters4 = 8
+nb_filters1 = 32
+nb_filters2 = 64
+nb_filters3 = 128
+nb_filters4 = 256
 
 # size of pooling area for max pooling
-pool_size = (2, 2)
+pool_size = (4, 4)
 
 # convolution kernel size
 kernel_size = (3, 3)
