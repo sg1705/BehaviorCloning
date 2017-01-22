@@ -16,3 +16,4 @@ dependencies:
   - eventlet
   - flask
   - tqdm
+  - more-itertools
