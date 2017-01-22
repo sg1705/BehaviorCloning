@@ -37,7 +37,7 @@ steering_correction = 0.17
 
 ###################################
 ##
-##  Read Data from CSV 
+##  1. Read Data from CSV 
 ##
 ###################################
 csvData = common.readCsv(PATH_OF_CSV)
@@ -46,7 +46,7 @@ csvData = common.readCsv(PATH_OF_CSV)
 
 ###################################
 ##
-##  Split the data into 
+##  2. Split the data into 
 ##  training/validation/testing sets here.
 ##
 ###################################
@@ -59,7 +59,7 @@ print('Shape of test csv {}', CSV_test.shape)
 
 ###################################
 ##
-##  Shuffling training data
+##  3. Shuffling training data
 ##
 ###################################
 CSV_train = shuffle(CSV_train)
@@ -76,7 +76,7 @@ print('Shape of validation csv {}', CSV_validation.shape)
 
 ###################################
 ##
-##  Test Image Generator
+##  4. Test Image Generator
 ##
 ###################################
 common.test_get_image(csvData)
@@ -85,7 +85,7 @@ common.test_generator(csvData)
 
 ###################################
 ##
-##  Create Model
+##  5. Create Model
 ##
 ###################################
 
@@ -170,7 +170,7 @@ model.compile(loss='mean_squared_error',
 
 ###################################
 ##
-##  Create 3 generators
+##  6. Create 3 generators
 ##  training, validation, testing
 ##
 ###################################
@@ -182,7 +182,7 @@ test_gen = common.get_infite_images_generator(CSV_test, batch_size=32)
 
 ###################################
 ##
-##  Train Model
+##  7. Train Model
 ##
 ###################################
 history = model.fit_generator(train_gen, 
@@ -200,7 +200,7 @@ print('Test accuracy:', score[1])
 
 ###################################
 ##
-##  Save Model
+##  8. Save Model
 ##
 ###################################
 json_string = model.to_json()
