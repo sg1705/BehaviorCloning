@@ -1,5 +1,9 @@
 #Behavior Cloning
 
+The distribution of training data shows that it is biased towards 0.0 angle. This means that the model is more likely to predict an angle that is near to 0.
+![Distribution of training data](images/image00.png)
+
+
 |  Learning Rate | Epochs | Steering Angle Correction (Radian) | % Flipped | Channels | Model | Driving Quality Track 1 | Time on Track2 | Validation Loss | Validation Accuracy | Test Score Accuracy |
 |  :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: | :------: |
 |  0.001 | 5 | 0.17 | 0.5 | 3 | Architecture A | Drunk | 1 minute | 0.014 | 0.175 | 0.186 |
