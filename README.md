@@ -28,6 +28,21 @@ Images are of size 160x320 pixels. Large images causes two issues
 *Inference: Crop the image*
 
 
+##Training Data is Biased Towards 0.0
+If we only consider center images then the above distribution shows that there is a bias towards 0.0 angles. This will cause the model to overfit and predict angles that are closer to 0.0
+
+*Inference: Use left and right images and correct angles.*
+
+
+##Angles are Clustered
+Negative and positive angles are clustered. That means when the car is turning left then it has a lot of angles that make it turning left. This is logical in the way car drives but it may cause an issue in the way model learns to predict angles. There are chances of local maxima and the model overfitting. This overfitting maybe cause the model to predict negative and positive angles ONLY in certain conditions and overfit for training data on those angles.
+
+###Clustering of angle signs###
+![Clustering of angles](images/image05.png)
+
+
+
+
 
 
 
