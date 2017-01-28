@@ -18,6 +18,7 @@ Let’s take a look at training data and explore how the pictures look.
 
 #Training Data Analysis
 
+
 ##Images are too big
 Images are of size 160x320 pixels. Large images causes two issues
 
@@ -28,10 +29,23 @@ Images are of size 160x320 pixels. Large images causes two issues
 *Inference: Crop the image*
 
 
+
 ##Training Data is Biased Towards 0.0
 If we only consider center images then the above distribution shows that there is a bias towards 0.0 angles. This will cause the model to overfit and predict angles that are closer to 0.0
 
 *Inference: Use left and right images and correct angles.*
+
+
+##Too Much Training Data for Memory
+8000 images are a lot. It won’t fit in memory and will slow down the CPU. Thus, we need to build a training data pipeline using generators
+
+
+
+#Training Data Pipeline
+Using generators, we can create a training data pipeline. I have borrowed flip algorithm from upul (https://github.com/upul/behavioral_cloning)
+
+![Training data pipeline](images/image02.png)
+
 
 
 ##Angles are Clustered
@@ -39,9 +53,6 @@ Negative and positive angles are clustered. That means when the car is turning l
 
 ###Clustering of angle signs###
 ![Clustering of angles](images/image05.png)
-
-
-
 
 
 
