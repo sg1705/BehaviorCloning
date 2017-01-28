@@ -23,8 +23,8 @@ The distribution of training data shows that it is biased towards 0.0 angle. Thi
 
 
 # Network Architecture
-
-`Layer (type)                     Output Shape          Param #     Connected to                     
+`
+Layer (type)                     Output Shape          Param #     Connected to                     
 ====================================================================================================
 convolution2d_1 (Convolution2D)  (None, 16, 78, 16)    448         convolution2d_input_1[0][0]      
 ____________________________________________________________________________________________________
