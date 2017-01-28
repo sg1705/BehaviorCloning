@@ -41,10 +41,6 @@ If we only consider center images then the above distribution shows that there i
 
 
 
-#Training Data Pipeline
-Using generators, we can create a training data pipeline. I have borrowed flip algorithm from upul (https://github.com/upul/behavioral_cloning)
-
-![Training data pipeline](images/image02.png)
 
 
 
@@ -54,6 +50,11 @@ Negative and positive angles are clustered. That means when the car is turning l
 ###Clustering of angle signs###
 ![Clustering of angles](images/image05.png)
 
+
+#Training Data Pipeline
+Using generators, we can create a training data pipeline. I have borrowed flip algorithm from upul (https://github.com/upul/behavioral_cloning)
+
+![Training data pipeline](images/image02.png)
 
 
 

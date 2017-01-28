@@ -92,7 +92,7 @@ common.test_generator(csvData)
 N_CLASSES = 1 # The output is a single digit: a steering angle
 
 BATCH_SIZE = 64 # The lower the better
-EPOCHS = 20 # The higher the better
+EPOCHS = 10 # The higher the better
 LEARNING_RATE = 0.0015
 
 # has to be multiple of batch_size and 3
